@@ -2,6 +2,8 @@ let player;
 let pImg;
 let cImg
 let bImg;
+let coins = [];
+
 
 
 
@@ -9,7 +11,7 @@ let bImg;
 function preload() {
     pImg = loadImage("./assets/player.jpg");
     cImg = loadImage("./assets/coin.png");
-    bImg = loadImage("./assets/mountain.png");
+    bImg = loadImage("./assets/mountain.png"); 
 
 }
 
@@ -29,9 +31,21 @@ function keyPressed () {
 
 
 function draw () {
+    if (random(1) < 0.01) {
+        coins.push(new Coins()); 
+    }
+
+    
+
+
     background(bImg);
     player.show();
     player.move();
+
+    for (let c of coins) {
+        c.move();
+        c.show();
+    }
 
 
 }
