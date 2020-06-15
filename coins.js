@@ -5,7 +5,7 @@
 } */
 
 function blitz(min, max) {
-    return Math.floor(Math.random() * (750 - 50) + min) 
+    return Math.floor(Math.random() * (750 - 100) + 100) 
   }
 
 
@@ -13,7 +13,7 @@ class Coins {
     constructor() {
         this.r = 100;
         this.x = width;
-        this.y = height - blitz; //-getRandom --> to have a random height of coins
+        this.y = blitz(); //-getRandom --> to have a random height of coins
     }
 
     move() {

@@ -34,7 +34,6 @@ function draw () {
     if (random(1) < 0.01) {
         coins.push(new Coins()); 
     }
-
     
 
 
@@ -42,9 +41,13 @@ function draw () {
     player.show();
     player.move();
 
+
     for (let c of coins) {
         c.move();
         c.show();
+        if (player.hits(c  )) {
+            console.log("you got 5 more seconds!");
+        }
     }
 
 

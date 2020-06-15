@@ -13,6 +13,11 @@ class Player {
         this.vy = -24;
     }
 
+    hits(coin) {
+        return collideRectRect(this.x, this.y, this.r, this.r, coin.x, coin.y, coin.r, coin.r);
+    }
+
+
     move() {
         this.y += this.vy;
         this.vy += this.gravity;
