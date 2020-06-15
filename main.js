@@ -17,7 +17,7 @@ function preload() {
 
 
 function setup () {
-    createCanvas(1400, 750);
+    createCanvas(1400, 900);
     player = new Player();
 
 
