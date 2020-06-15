@@ -14,7 +14,14 @@ class Player {
     }
 
     hits(coin) {
-        return collideRectRect(this.x, this.y, this.r, this.r, coin.x, coin.y, coin.r, coin.r);
+        let x1 = this.x + this.r * 0.5;
+        let y1 = this.y + this.r * 0.5;
+        let x2 = coin.x + coin.r * 0.5;
+        let y2 = coin.y + coin.r * 0.5;
+
+        
+        
+        return collideCircleCircle(x1, y1, this.r, this.r, x2, y2, coin.r, coin.r);
     }
 
 
@@ -26,5 +33,9 @@ class Player {
 
     show () {
         image(pImg, this.x, this.y, this.r, this.r );
+        fill(255, 50);
+        ellipseMode(CORNER);
+        ellipse(this.x, this.y, this.r, this.r)
+
     }
 } 
