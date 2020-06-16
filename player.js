@@ -2,7 +2,7 @@ class Player {
     constructor() {
         this.r = 120;
         this.x = 50;
-        this.y = height - this.r;
+        this.y = height //- this.r;
         this.vy = 0;
         this.gravity = 0.8;
 
