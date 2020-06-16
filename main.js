@@ -5,8 +5,8 @@ let background;
 let coins = [];
 
 function preload() {
-  pImg = loadImage("./assets/player.jpg");
-  cImg = loadImage("./assets/coin.png");
+  pImg = loadImage("./assets/Screenshot_2020-06-16_at_16-removebg-preview.png");
+  cImg = loadImage("./assets/transparent_code.png");
   /*bImg1 = loadImage("./assets/parallax-mountain-bg.png")
     bImg2 = loadImage("./assets/parallax-mountain-montain-far.png")
     bImg3 = loadImage("./assets/parallax-mountain-mountains.png")
