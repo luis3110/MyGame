@@ -44,4 +44,5 @@ class Background {
       this.move(this.images[i]);
     }
   }
+
 }

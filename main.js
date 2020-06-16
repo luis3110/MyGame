@@ -15,9 +15,13 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(1400, 900);
+  createCanvas(windowWidth, windowHeight);
   player = new Player();
   background = new Background();
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
 
 function keyPressed() {

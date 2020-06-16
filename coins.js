@@ -5,7 +5,7 @@
 } */
 
 function blitz(min, max) {
-    return Math.floor(Math.random() * (750 - 100) + 100) 
+    return Math.floor(Math.random() * (750 - 250) + 250) 
   }
 
 
