@@ -4,6 +4,11 @@ let cImg
 let bImg;
 let coins = [];
 
+/*class Game {
+    constructor () {
+        this.background = new Background();
+    }*/
+
 
 
 
@@ -11,7 +16,17 @@ let coins = [];
 function preload() {
     pImg = loadImage("./assets/player.jpg");
     cImg = loadImage("./assets/coin.png");
-    bImg = loadImage("./assets/mountain.png"); 
+    bImg1 = loadImage("./assets/parallax-mountain-bg.png")
+    /*bImg1 =[{src: loadImage("./assets/parallax-mountain-bg.png"), speed: 0 }, 
+    { src: loadImage("./assets/parallax-mountain-montain-far.png"), spped 0}, 
+    { src: loadImage("./assets/parallax-mountain-mountains.png"), speed: 0}, 
+    { src: loadImage("./assets/parallax-mountain-trees.png"), speed: 0},
+    { src: loadImage("./assets/parallax-mountain-foreground-trees.png"), speed: 0} ]; */
+    bImg2 = loadImage("./assets/parallax-mountain-montain-far.png")
+    bImg3 = loadImage("./assets/parallax-mountain-mountains.png")
+    bImg4 = loadImage("./assets/parallax-mountain-trees.png")
+    bImg5 = loadImage("./assets/parallax-mountain-foreground-trees.png")
+
 
 }
 
@@ -35,11 +50,19 @@ function draw () {
         coins.push(new Coins()); 
     }
     
+    //this.background.drawingBackground();
+
+    background(bImg1);
+    //background(bImg2);
+    background(bImg3);
+    background(bImg4);
+    background(bImg5); 
 
 
-    background(bImg);
     player.show();
     player.move();
+
+    
 
 
     for (let c of coins) {
@@ -52,3 +75,5 @@ function draw () {
 
 
 }
+
+//}
