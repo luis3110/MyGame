@@ -37,6 +37,7 @@ class Player {
         this.y += this.vy;
         this.vy += this.gravity;
         this.y = constrain(this.y, 0, height - this.r);
+        this.x = constrain(this.x, 0, width - this.r);
     }
 
     show () {

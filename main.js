@@ -23,10 +23,10 @@ function keyPressed() {
   if (keyCode === 32) {
     player.jump();
   }
-  if (keyCode === 39) {
+  if (keyCode === 68) {
     player.goRight();
   }
-  if (keyCode === 37) {
+  if (keyCode === 65) {
     player.goLeft();
   }
   
