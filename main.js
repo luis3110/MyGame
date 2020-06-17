@@ -20,23 +20,19 @@ function windowResized() {
 }
 
 function keyPressed() {
-  if (key == " ") {
+  if (keyCode === 32) {
     player.jump();
   }
-  if (key === "d") {
+  if (keyCode === 39) {
     player.goRight();
   }
-  if (key === "a") {
+  if (keyCode === 37) {
     player.goLeft();
   }
   
 }
 
-function keyCode() {
-  if (keyCode === 37) {
-    player.right();
-  }
-}
+
 
 function draw() {
   clear();

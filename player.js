@@ -5,7 +5,6 @@ class Player {
         this.y =  height - this.r;
         this.vy = 0;
         this.gravity = 0.8;
-        this.rights = 0;
     }
 
     jump() {
@@ -14,16 +13,13 @@ class Player {
     }
 
     goLeft() {
-        this.x = 0;
+        this.x -= 50;
     }
 
     goRight() {
-        this.x = +250; 
+        this.x += 50; 
     }
 
-    right() {
-        this.rights += 10;
-    }
 
     hits(coin) {
         let x1 = this.x + this.r * 0.5;
