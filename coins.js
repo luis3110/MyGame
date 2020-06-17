@@ -14,10 +14,14 @@ class Coins {
         this.r = 100;
         this.x = width;
         this.y = blitz(); //-getRandom --> to have a random height of coins
+        this.width = 10;
+        this.height = 10;
     }
 
+   
+
     move() {
-        this.x -= 10;
+        this.x -= 10; // the speed of the coins to come into the canvas 
        // this.y = random; 
     }
 

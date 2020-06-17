@@ -7,26 +7,24 @@ let coins = [];
 function preload() {
   pImg = loadImage("./assets/Screenshot_2020-06-16_at_16-removebg-preview.png");
   cImg = loadImage("./assets/transparent_code.png");
-  /*bImg1 = loadImage("./assets/parallax-mountain-bg.png")
-    bImg2 = loadImage("./assets/parallax-mountain-montain-far.png")
-    bImg3 = loadImage("./assets/parallax-mountain-mountains.png")
-    bImg4 = loadImage("./assets/parallax-mountain-trees.png")
-    bImg5 = loadImage("./assets/parallax-mountain-foreground-trees.png")*/
 }
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(windowWidth, 450);
   player = new Player();
   background = new Background();
 }
 
 function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
+  resizeCanvas(windowWidth, 450);
 }
 
 function keyPressed() {
   if (key == " ") {
     player.jump();
+  }
+  if (key === "39") {
+    player.goRight();
   }
 }
 
@@ -38,11 +36,6 @@ function draw() {
 
   background.draw();
 
-  /*background(bImg1);
-    background(bImg3);
-    background(bImg4);
-    background(bImg5); */
-
   player.show();
   player.move();
 
@@ -50,7 +43,7 @@ function draw() {
     c.move();
     c.show();
     if (player.hits(c)) {
-      console.log("you got 5 more seconds!");
+      console.log("good!");
     }
   }
 }

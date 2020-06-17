@@ -2,15 +2,18 @@ class Player {
     constructor() {
         this.r = 120;
         this.x = 50;
-        this.y = height //- this.r;
+        this.y =  height - this.r;
         this.vy = 0;
         this.gravity = 0.8;
-
     }
 
     jump() {
         //if (this.y == height - this.r)
         this.vy = -24;
+    }
+
+    goRight() {
+        this.x = -100;
     }
 
     hits(coin) {
