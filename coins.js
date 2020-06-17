@@ -5,7 +5,7 @@
 } */
 
 function blitz(min, max) {
-    return Math.floor(Math.random() * (750 - 250) + 250) 
+    return Math.floor(Math.random() * (300 - 1) + 1) 
   }
 
 
@@ -18,18 +18,16 @@ class Coins {
         this.height = 10;
     }
 
-/*checkCollision(player) {
-    let leftSide = this.x;
-    let rightSide = this.x + this.width;
-    let playerLeftSide = player.x;
-    let playerRightSide = player.x + player.width;
-    let topSide = this.y;
-    let bottomSide = this.y + this.height;
-    let playerTopSide = player.y;
-    let playerBottomSide = player.y + player.height;
-    console.log(leftSide, playerLeftSide, playerRightSide)
-
-} */
+    hits(player) {
+        // console.log(player)
+        // console.log(this)
+        if (this.x > player.x + player.r || player.x > this.x + this.width){ 
+            return false;
+        } else {
+            return true;
+        }
+        
+    }
 
 
     move() {

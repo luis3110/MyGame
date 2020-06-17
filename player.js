@@ -9,7 +9,7 @@ class Player {
 
     jump() {
         //if (this.y == height - this.r)
-        this.vy = -24;
+        this.vy = -23;
     }
 
     goLeft() {
@@ -21,16 +21,19 @@ class Player {
     }
 
 
-    hits(coin) {
-        let x1 = this.x + this.r * 0.5;
+    /*hits(coin) {
+        if (coin.x = this.x) {
+            console.log("test");
+        }
+        /*let x1 = this.x + this.r * 0.5;
         let y1 = this.y + this.r * 0.5;
         let x2 = coin.x + coin.r * 0.5;
         let y2 = coin.y + coin.r * 0.5;
 
         
         
-        return collideCircleCircle(x1, y1, this.r, this.r, x2, y2, coin.r, coin.r);
-    }
+        return collideCircleCircle(x1, y1, this.r, this.r, x2, y2, coin.r, coin.r);*/
+    
 
 
     move() {
