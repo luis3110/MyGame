@@ -12,8 +12,12 @@ class Player {
         this.vy = -24;
     }
 
+    goLeft() {
+        this.x = -50;
+    }
+
     goRight() {
-        this.x = -100;
+        this.x = +50;
     }
 
     hits(coin) {
