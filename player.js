@@ -1,10 +1,11 @@
 class Player {
     constructor() {
         this.r = 120;
-        this.x = 50;
+        this.x = 150;
         this.y =  height - this.r;
         this.vy = 0;
         this.gravity = 0.8;
+        this.rights = 0;
     }
 
     jump() {
@@ -13,11 +14,15 @@ class Player {
     }
 
     goLeft() {
-        this.x = -50;
+        this.x = 0;
     }
 
     goRight() {
-        this.x = +50;
+        this.x = +250; 
+    }
+
+    right() {
+        this.rights += 10;
     }
 
     hits(coin) {

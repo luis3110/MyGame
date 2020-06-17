@@ -23,11 +23,18 @@ function keyPressed() {
   if (key == " ") {
     player.jump();
   }
+  if (key === "d") {
+    player.goRight();
+  }
   if (key === "a") {
     player.goLeft();
   }
-  if (key === "d") {
-    player.goRight();
+  
+}
+
+function keyCode() {
+  if (keyCode === 37) {
+    player.right();
   }
 }
 
