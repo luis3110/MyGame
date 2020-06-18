@@ -54,32 +54,13 @@ function draw() {
   for (let c of coins) {
     c.move();
     c.show();
-    if (c.hits(player)) {
-      score += 10;
-      console.log(score);
-    }
+    if (c.hits(player) === true) {
+      //score += 10;
+      return c.draw();
+    } else return !c.draw;
+      
+    
   }
-
-
-  
-  /*this.obstacles.forEach((elem) => {
-    // we draw all of the obstacles
-    elem.drawingObstacles();
-    elem.checkCollision(this.player);
-  });
-  this.coins = this.coins.filter((coins) => {
-    // here we check if the collision is happening, and if it is happenind we return false to filter the obstacle :D
-    if (coins.checkCollision(this.player)) {
-      console.log("happening");
-      return false;
-    } else {
-      // here we keep the obstacles
-      console.log(" not colliding");
-
-      return true;
-    }
-  });*/
-
 
 
 }
