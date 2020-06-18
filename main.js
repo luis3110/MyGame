@@ -75,6 +75,7 @@ function draw() {
     rect(0,0,width,height);
     if(!gameOverMusic.isPlaying()){
         gameOverMusic.play();
+        gameOverMusic.stop();
     }
     
   }
