@@ -8,7 +8,7 @@ class Player {
     }
 
     jump() {
-        //if (this.y == height - this.r)
+        if (this.y == height - this.r)
         this.vy = -23;
     }
 

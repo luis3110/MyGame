@@ -1,10 +1,21 @@
 body {
     background-color: purple;
+    flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-end;
+	align-items: stretch;
+	align-content: stretch;
 }
 
-article {
+footer {
     color: white;
     text-align: center;
+    display: flex;
+	/* flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-end;
+	align-items: stretch;
+	align-content: stretch; */
 }
 
 h1 {
