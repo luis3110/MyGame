@@ -16,6 +16,8 @@ let interval;
 let gameOverImg;
 let ding; 
 let gameOverMusic;
+let music;
+
 
 
 
@@ -27,12 +29,14 @@ function preload() {
   gameOverImg = loadImage("./assets/Game_Over_sign_video_game-512.png")
   awesomeSound = loadSound("./assets/Updraft.mp3");
   ding = loadSound("./assets/large_plate+hardhammer.mp3");
-  //gameOverMusic = loadSound("./assets/Evil_Laugh_1-Timothy-64737261.mp3");
+  gameOverMusic = loadSound("./assets/Evil_Laugh_1-Timothy-64737261.mp3");
+  music = loadSound("./assets/Updraft.mp3");
 }
 
 function setup() {
   createCanvas(windowWidth, 450)
-document.querySelector("canvas").style.flex="none"
+  //music.play(); 
+
   player = new Player();
   background = new Background();
 
@@ -44,7 +48,6 @@ document.querySelector("canvas").style.flex="none"
   function timeIt() {
     counter ++;
     timer.html(timeLeft - counter); 
-   
   }
   
 }
@@ -70,7 +73,10 @@ function draw() {
   if(gameOver){
     image(gameOverImg,0, 0, width, 0);
     rect(0,0,width,height);
-    //gameOverMusic.play();
+    if(!gameOverMusic.isPlaying()){
+        gameOverMusic.play();
+    }
+    
   }
   else{
     if (counter == timeLeft){
