@@ -7,18 +7,39 @@ let Bground;
 let score = 10;
 // let startGame = false;
 let awesomeSound;
+let counter = 0;
+let timeLeft = 5;
+let gameOver=false;
+let collision;
+let giveCoins;
+let timer;
+let interval;
+
 
 function preload() {
   pImg = loadImage("./assets/Screenshot_2020-06-16_at_16-removebg-preview.png");
   cImg = loadImage("./assets/transparent_code.png");
-  //bground = loadImage("./assets/grey.jpg");
+  gameOverImg = loadImage("./assets/Game_Over_sign_video_game-512.png")
+
 }
 
 function setup() {
-  createCanvas(windowWidth, 450);
+  createCanvas(windowWidth, 450)
+document.querySelector("canvas").style.flex="none"
   player = new Player();
   background = new Background();
-  //bground = new Bground();
+
+   timer = select('#timer');
+  timer.html(timeLeft - counter);
+
+   interval = setInterval(timeIt, 1000);
+  
+  function timeIt() {
+    counter ++;
+    timer.html(timeLeft - counter); 
+   
+  }
+  
 }
 
 function windowResized() {
@@ -38,44 +59,52 @@ function keyPressed() {
 }
 
 function draw() {
-//   if (startGame == true){
-//     game.drawingGame();
-//   } else {
-//     fill("blue");
-//     ClientRect(0, 0, width, height);
-//     fill("Red");
-//     textSize(32);
-//     textAlign(Center);
-//     text("Please press any key to start!", width, 2, height, 2)
-//   }
-// }
-  //frameRate(30);
-  clear();
-  if (random(1) < 0.01) {
-    coins.push(new Coins());
+  console.log(gameOver)
+  if(gameOver){
+    gameOver.show();
+    //rect(0,0,width,height)
   }
-
-  background.draw();
-  //bground.draw();
-
-  player.show();
-  player.move();
-
-  for (let c of coins) {
-    c.move();
-    c.show();
-    if (c.hits(player) === true) {
-      score += 10;
-      console.log(score);
-      console.log(coins);
-
-      // This filter is removing the coins once they are collected. It's saying...
-      // remove the coins from the array if that specific coin's hit function returns a false or the coin leaves the canvas to the left remove it from the array
-      coins = coins.filter((coin) => {
-        if (!coin.hits(player) || coin.x < 0) {
-          return true;
-        }
-      });
+  else{
+    if (counter == timeLeft){
+      //gameOver.draw();
+      clearInterval(interval); 
+      gameOver=true
+      //counter = 0;
     }
+  
+    //frameRate(30);
+    clear();
+    if (random(1) < 0.01) {
+      coins.push(new Coins());
+    }
+  
+    background.draw();
+  
+    player.show();
+    player.move();
+  
+    for (let c of coins) {
+      c.move();
+      c.show();
+      if (c.hits(player) === true) {
+        score += 10;
+        timeLeft+=5; 
+        console.log(score);
+        console.log(coins);
+  
+        // This filter is removing the coins once they are collected. It's saying...
+        // remove the coins from the array if that specific coin's hit function returns a false or the coin leaves the canvas to the left remove it from the array
+      
+      }
+    }
+    coins = coins.filter((coin) => {
+      if (!coin.hits(player) || coin.x < 0) {
+        
+        return true;
+      }
+    });
+  
+  
   }
+  
 }
