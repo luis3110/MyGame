@@ -55,7 +55,8 @@ function draw() {
     c.move();
     c.show();
     if (c.hits(player) === true) {
-      //score += 10;
+      score += 10;
+      console.log(score);
     //   return c.draw();
     // } else return !c.draw;
       

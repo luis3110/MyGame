@@ -19,9 +19,8 @@ class Coins {
     }
 
     hits(player) {
-        // console.log(player)
-        // console.log(this)
-        if (this.x > player.x + player.r || player.x > this.x + this.width){ 
+         
+        if (this.x > player.x || this.y > player.y || this.y < player.y){ 
             return false;
         } else {
             return true;
