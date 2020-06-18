@@ -5,6 +5,7 @@ let background;
 let coins = [];
 let Bground;
 let score = 10;
+// let startGame = false;
 
 function preload() {
   pImg = loadImage("./assets/Screenshot_2020-06-16_at_16-removebg-preview.png");
@@ -36,6 +37,17 @@ function keyPressed() {
 }
 
 function draw() {
+//   if (startGame == true){
+//     game.drawingGame();
+//   } else {
+//     fill("blue");
+//     ClientRect(0, 0, width, height);
+//     fill("Red");
+//     textSize(32);
+//     textAlign(Center);
+//     text("Please press any key to start!", width, 2, height, 2)
+//   }
+// }
   //frameRate(30);
   clear();
   if (random(1) < 0.01) {
