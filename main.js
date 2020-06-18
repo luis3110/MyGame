@@ -56,11 +56,12 @@ function draw() {
     c.show();
     if (c.hits(player) === true) {
       //score += 10;
-      return c.draw();
-    } else return !c.draw;
+    //   return c.draw();
+    // } else return !c.draw;
       
     
   }
 
 
+}
 }
