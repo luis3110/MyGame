@@ -1,27 +1,26 @@
 class Player {
-    constructor() {
-        this.r = 120;
-        this.x = 150;
-        this.y =  height - this.r;
-        this.vy = 0;
-        this.gravity = 0.8;
-    }
+  constructor() {
+    this.r = 120;
+    this.x = 150;
+    this.y = height - this.r;
+    this.vy = 0;
+    this.gravity = 0.8;
+  }
 
-    jump() {
-        //if (this.y == height - this.r)
-        this.vy = -23;
-    }
+  jump() {
+    //if (this.y == height - this.r)
+    this.vy = -23;
+  }
 
-    goLeft() {
-        this.x -= 50;
-    }
+  goLeft() {
+    this.x -= 50;
+  }
 
-    goRight() {
-        this.x += 50; 
-    }
+  goRight() {
+    this.x += 50;
+  }
 
-
-    /*hits(coin) {
+  /*hits(coin) {
         if (coin.x = this.x) {
             console.log("test");
         }
@@ -33,21 +32,18 @@ class Player {
         
         
         return collideCircleCircle(x1, y1, this.r, this.r, x2, y2, coin.r, coin.r);*/
-    
 
+  move() {
+    this.y += this.vy;
+    this.vy += this.gravity;
+    this.y = constrain(this.y, 0, height - this.r);
+    this.x = constrain(this.x, 0, width - this.r);
+  }
 
-    move() {
-        this.y += this.vy;
-        this.vy += this.gravity;
-        this.y = constrain(this.y, 0, height - this.r);
-        this.x = constrain(this.x, 0, width - this.r);
-    }
-
-    show () {
-        image(pImg, this.x, this.y, this.r, this.r );
-        fill(255, 50);
-        // ellipseMode(CORNER);
-        //ellipse(this.x, this.y, this.r, this.r)
-
-    }
-} 
+  show() {
+    image(pImg, this.x, this.y, this.r, this.r);
+    fill(255, 50);
+    // ellipseMode(CORNER);
+    //ellipse(this.x, this.y, this.r, this.r)
+  }
+}

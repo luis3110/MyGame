@@ -33,10 +33,7 @@ function keyPressed() {
   if (keyCode === 65) {
     player.goLeft();
   }
-  
 }
-
-
 
 function draw() {
   //frameRate(30);
@@ -57,12 +54,15 @@ function draw() {
     if (c.hits(player) === true) {
       score += 10;
       console.log(score);
-    //   return c.draw();
-    // } else return !c.draw;
-      
-    
+      console.log(coins);
+
+      // This filter is removing the coins once they are collected. It's saying...
+      // remove the coins from the array if that specific coin's hit function returns a false or the coin leaves the canvas to the left remove it from the array
+      coins = coins.filter((coin) => {
+        if (!coin.hits(player) || coin.x < 0) {
+          return true;
+        }
+      });
+    }
   }
-
-
-}
 }
