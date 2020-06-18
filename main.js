@@ -3,7 +3,6 @@ let pImg;
 let cImg;
 let background;
 let coins = [];
-let Bground;
 let score = 10;
 // let startGame = false;
 let awesomeSound;
@@ -14,6 +13,8 @@ let collision;
 let giveCoins;
 let timer;
 let interval;
+let gameOverImg;
+
 
 
 function preload() {
@@ -61,14 +62,14 @@ function keyPressed() {
 function draw() {
   console.log(gameOver)
   if(gameOver){
-    //gameOver.show();
-    gameOverImg.show();//(0,0,width,height)
+    //gameOverImg.show();//(0,0,width,height)
+    
     rect(0,0,width,height)
   }
   else{
     if (counter == timeLeft){
       //gameOver.draw();
-      clearInterval(interval); 
+      clearInterval(interval);  
       gameOver=true
       //counter = 0;
     }
