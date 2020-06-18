@@ -61,8 +61,9 @@ function keyPressed() {
 function draw() {
   console.log(gameOver)
   if(gameOver){
-    gameOver.show();
-    //rect(0,0,width,height)
+    //gameOver.show();
+    gameOverImg.show();//(0,0,width,height)
+    rect(0,0,width,height)
   }
   else{
     if (counter == timeLeft){
