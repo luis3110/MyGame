@@ -1,21 +1,24 @@
 body {
     background-color: purple;
+    /* display: flex; 
     flex-direction: column;
 	flex-wrap: nowrap;
 	justify-content: flex-end;
 	align-items: stretch;
-	align-content: stretch;
+    align-content: stretch;  */
+    margin: 0;
+    padding: 0;
 }
 
 footer {
     color: white;
     text-align: center;
-    display: flex;
-	/* flex-direction: column;
+    /* display: flex;
+	flex-direction: column;
 	flex-wrap: nowrap;
 	justify-content: flex-end;
 	align-items: stretch;
-	align-content: stretch; */
+	align-content: stretch; */ 
 }
 
 h1 {

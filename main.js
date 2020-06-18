@@ -6,6 +6,7 @@ let coins = [];
 let Bground;
 let score = 10;
 // let startGame = false;
+let awesomeSound;
 
 function preload() {
   pImg = loadImage("./assets/Screenshot_2020-06-16_at_16-removebg-preview.png");
