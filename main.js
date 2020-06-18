@@ -15,6 +15,8 @@ let timer;
 let interval;
 let gameOverImg;
 let ding; 
+let gameOverMusic;
+
 
 
 
@@ -25,7 +27,7 @@ function preload() {
   gameOverImg = loadImage("./assets/Game_Over_sign_video_game-512.png")
   awesomeSound = loadSound("./assets/Updraft.mp3");
   ding = loadSound("./assets/large_plate+hardhammer.mp3");
-
+  //gameOverMusic = loadSound("./assets/Evil_Laugh_1-Timothy-64737261.mp3");
 }
 
 function setup() {
@@ -66,9 +68,9 @@ function keyPressed() {
 function draw() {
   console.log(gameOver)
   if(gameOver){
-    image(gameOverImg,0, 0, width, 0)
-    
-    rect(0,0,width,height)
+    image(gameOverImg,0, 0, width, 0);
+    rect(0,0,width,height);
+    //gameOverMusic.play();
   }
   else{
     if (counter == timeLeft){
