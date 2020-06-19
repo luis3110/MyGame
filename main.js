@@ -7,7 +7,7 @@ let score = 10;
 // let startGame = false;
 let awesomeSound;
 let counter = 0;
-let timeLeft = 5;
+let timeLeft = 30;
 let gameOver=false;
 let collision;
 let giveCoins;
@@ -75,7 +75,7 @@ function draw() {
     rect(0,0,width,height);
     if(!gameOverMusic.isPlaying()){
         gameOverMusic.play();
-        gameOverMusic.stop();
+        //gameOverMusic.stop();
     }
     
   }
@@ -87,7 +87,7 @@ function draw() {
       //counter = 0;
     }
   
-    //frameRate(30);
+    //frameRate(30); 
     clear();
     if (random(1) < 0.01) {
       coins.push(new Coins());
@@ -103,7 +103,7 @@ function draw() {
       c.show();
       if (c.hits(player) === true) {
         score += 10;
-        timeLeft+=5; 
+        timeLeft+=3; 
         ding.play();
         console.log(score);
         console.log(coins);
