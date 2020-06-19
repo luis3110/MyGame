@@ -17,6 +17,7 @@ let gameOverImg;
 let ding; 
 let gameOverMusic;
 let music;
+let gameOverPlayed = false;
 
 
 
@@ -69,13 +70,23 @@ function keyPressed() {
 }
 
 function draw() {
+  // console.log(gameOver)
+  // if(gameOver){
+  //   image(gameOverImg,0, 0, width, 0);
+  //   rect(0,0,width,height);
+  //   if(!gameOverMusic.isPlaying()){
+  //       gameOverMusic.play();
+  //       //gameOverMusic.stop();
+  //   }
+    
+  // }
   console.log(gameOver)
   if(gameOver){
     image(gameOverImg,0, 0, width, 0);
     rect(0,0,width,height);
-    if(!gameOverMusic.isPlaying()){
+    if(!gameOverPlayed){
         gameOverMusic.play();
-        //gameOverMusic.stop();
+        gameOverPlayed = true
     }
     
   }
